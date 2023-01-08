@@ -7,7 +7,7 @@ const token = process.env.BOT_TOKEN;
 
 try {
     const discordClient = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
-
+    
     discordClient.on('ready', () => {
         console.log('pica pal ta na área');
     });
@@ -17,8 +17,8 @@ try {
             message.reply('BLZZ')
         }
     });
+
+    discordClient.login(token);
 } catch (error) {
     console.error('erro', error);
 }
-
-client.login(token);
